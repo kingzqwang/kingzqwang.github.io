@@ -1,53 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>{% if page.title %} {{ page.title }} {% else %} {{ site.name }} {% endif %}</title>
-        <meta name="viewport" content="width=device-width">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>{{ page.title }}</title>
+    <link rel="shortcut icon" type="image/png" href="/images/heng.png">
+    <meta name="author" content="Wei Heng" />
+    <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM" />
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/lengerfulluse.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/font_awesome.css" type="text/css" />
+    <!-- Homepage CSS -->
+    <link rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen, projection" />
+</head>
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+<body>
+    <!-- ClickTale Top part -->
+    <script type="text/javascript">
+    var WRInitTime = (new Date()).getTime();
+    </script>
+    <!-- ClickTale end of Top part -->
+    <div class="site">
+        <div class="title">
+            <a href="/">Heng</a>
+            <a class="extra" href="/">home</a>
+        </div>
+        {{ content }}
+        <div class="footer">
+            <div class="copyright">
+                <p>
+                    Personal technical blog for software development practices, reading notes on ML, NLP.</br>
+                    &copy; 2013&mdash;2015 by Heng Wei. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- ClickTale Bottom part -->
+    <div id="ClickTaleDiv" style="display: none;"></div>
+    <script type="text/javascript">
+    if (document.location.protocol != 'https:')
+        document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    if (typeof ClickTale == 'function') ClickTale(206, 0.3, "www03");
+    </script>
+    <!-- ClickTale end of Bottom part -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-6016902-1");
+    pageTracker._trackPageview();
+    </script>
+    <!-- Google Analytics end -->
+</body>
 
-    </head>
-    <body>
-
-		<div id="container">
-
-			<div class="left">
-				<h1>{{ site.name }}</h1>
-				<img id="about" src="/img/logo.jpg" height="75px" width="75px" /><br />	
-
-				<strong>navigation</strong><br />
-				<a href="/">home</a> <br />
-				{% for i in site.urls %}
-					<a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
-				{% endfor %}
-				
-				{% if site.about %}
-				<div id="about">
-					<strong>about</strong><br />
-					{{ site.about }}
-				</div>
-				{% endif %}
-			</div>
-
-			<div class="right">
-				
-				{{ content }}
-				
-				<footer>
-					&copy; {{ site.name }}
-					{% if site.github %} 
-						- <a href="{{ site.github }}">{{ site.github }}</a>
-					{% endif %}
-				</footer>
-			</div>
-		
-		</div>
-
-    </body>
 </html>
